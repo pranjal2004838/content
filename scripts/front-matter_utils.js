@@ -9,7 +9,7 @@ import addFormats from "ajv-formats";
 import { betterAjvErrors } from "@apideck/better-ajv-errors";
 
 export function getRelativePath(filePath) {
-  return path.relative(process.cwd(), filePath);
+  return path.relative(process.cwd(), filePath).replaceAll("\\", "/");
 }
 
 export function getAjvValidator(schema) {
